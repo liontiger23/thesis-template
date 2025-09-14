@@ -71,6 +71,50 @@
 %% Reduce indentation of bibliography citations
 \setlength{\csllabelwidth}{1.5em}
 
+\usepackage{lscape}
+
+%% Define \ceil*{} -- https://tex.stackexchange.com/questions/42271/floor-and-ceiling-functions/42274
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+
+%%%%
+%% Threorm, algorithm and other stuff
+%%%%
+
+\usepackage{amsthm}
+
+\newtheorem{algorithmbase}{Алгоритм}[section]
+\newtheorem{definition}{Определение}[section]
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{statement}[theorem]{Утверждение}
+\newtheorem{corollary}[theorem]{Следствие}
+
+%% Fix spacing between nested items and outer ones
+\usepackage{enumitem}
+\setlist[enumerate]{topsep=\parskip,itemsep=\parskip}
+\setlist[itemize]{topsep=\parskip,itemsep=\parskip}
+
+%\AtBeginDocument{
+%    \abovedisplayskip=2\parskip
+%    \belowdisplayskip=2\parskip
+%    \abovedisplayshortskip=2\parskip
+%    \belowdisplayshortskip=2\parskip
+%}
+
+\newenvironment{algorithm}[1]{
+    \begin{algorithmbase}\label{#1}
+    %% nested enumerate -- https://stackoverflow.com/a/24650181
+    \renewcommand{\labelenumi}{\arabic{enumi}.} 
+    \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+    \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumii}}
+} {
+    \qed
+    \end{algorithmbase}
+}
+
+%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%
 %% Listings
 %%%%%%%%%%%%%%%%%%%
