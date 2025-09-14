@@ -122,7 +122,7 @@ def fact(n):
 </div>
 
 Всегда лучше выбирать рисунки в векторном формате (.svg, .pdf и.т.п), либо
-рисовать прямо в \LaTeX с помощью Ti*k*Z, как показано на [@fig:tikz-example].
+рисовать прямо в \LaTeX\ с помощью Ti*k*Z, как показано на [@fig:tikz-example].
 
 ```{=latex}
 \begin{tikzfigure}{fig:tikz-example}{Таблица виртуальных методов для класса C}
