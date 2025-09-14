@@ -106,7 +106,7 @@ ROOT_IMAGE_DEPS = $(filter $(IMAGES_DIR)/%,$(DOT_PDF_ROOT) $(SVG_PDF_ROOT) $(PNG
 .SECONDEXPANSION:
 $(PDF): $(SRC_DIR)/%.pdf: $(ROOT_IMAGE_DEPS) $(COMMON_PNG_IMAGE_DEPS) $$(TARGET_IMAGE_DEPS) $(DOC_PDF)
 
-$(PDF): $(COMMON_DIR)/preamble.tex
+$(PDF): $(COMMON_DIR)/preamble.tex $(COMMON_DIR)/citations.bib $(COMMON_DIR)/gost/gost-r-7-0-5-2008-numeric.csl
 $(PDF): PANDOC_ARGS = \
 	-H $(COMMON_DIR)/preamble.tex \
 	--listings \
